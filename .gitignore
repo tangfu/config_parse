@@ -1,0 +1,4 @@
+*.swp
+libconfig_parse.a
+test/test
+doc/html/*
