@@ -2,3 +2,6 @@
 libconfig_parse.a
 test/test
 doc/html/*
+build/*
+*~
+*.orig
