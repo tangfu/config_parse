@@ -18,3 +18,11 @@ add_custom_command(TARGET config_parse
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     #VERBATIM
     )
+
+add_custom_command(TARGET config_parse
+    POST_BUILD
+    COMMENT "[generate sha1 file]"
+    COMMAND rm -rf sha1sum.* 2>/dev/null
+    COMMAND [ -z `which sha1sum 2>/dev/null` ] || [ -z `which touch 2>/dev/null` ] || touch sha1sum.`sha1sum src/libconfig_parse.a`
+    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+    )
